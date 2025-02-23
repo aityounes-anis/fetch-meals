@@ -1,6 +1,5 @@
-import Meal from "./Meal";
-
 import { useContext } from "react";
+import Meal from "./Meal";
 import { MealsContext } from "../App";
 
 const Meals = () => {
@@ -9,13 +8,13 @@ const Meals = () => {
   return (
     <div>
       {meals ? (
-        <div>
+        <div className="meals-container">
           {meals.map((meal) => (
             <Meal key={meal.idMeal} meal={meal} />
           ))}
         </div>
       ) : (
-        <h1>empty</h1>
+        <h1 className="empty-state">No meals available</h1>
       )}
     </div>
   );
