@@ -11,7 +11,7 @@ export const useFecth = ({ URL }) => {
       setLoading(true);
       try {
         const response = await axios.get(URL);
-        setData(response.data);
+        if (response.data) setData(response.data);
       } catch (error) {
         console.log(`ERROR_GET_MEAL_API_REQUEST | ${error.message}`);
         setError(error);

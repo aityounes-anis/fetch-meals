@@ -1,15 +1,15 @@
 import { useContext } from "react";
-import Meal from "./Meal";
-import { MealsContext } from "../App";
+import Meal from "./meal";
+import { DisplayedMealsContext } from "../App";
 
 const Meals = () => {
-  const meals = useContext(MealsContext);
+  const displayedMeals = useContext(DisplayedMealsContext);
 
   return (
     <div>
-      {meals ? (
+      {displayedMeals ? (
         <div className="meals-container">
-          {meals.map((meal) => (
+          {displayedMeals.map((meal) => (
             <Meal key={meal.idMeal} meal={meal} />
           ))}
         </div>
